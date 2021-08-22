@@ -2,7 +2,7 @@ from bs4 import BeautifulSoup as bs
 import requests
 import re
 
-original = ""
+base = "https://warframe.market/items"
 
 def wrtie_to_file(content):
     f = open('output.txt', 'a')
@@ -27,7 +27,7 @@ def filter(content):
     pass
 
 
-data = setup(original)
+data = setup(url)
 soup = bs(data, 'html.parser')
 
 # Find relevant <div> tag with a specific class (find via inspect)
